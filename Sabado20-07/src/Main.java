@@ -1,7 +1,11 @@
 public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int a[]= {8,0,3,2,7,7,7,3,7,2};
+		System.out.println("Introducir tamaño de la base");
+		int base=Entrada.entero();
+		System.out.println("Introducir altura maxima");
+		int altura=Entrada.entero();
+		int a[]= CrearTorres(base,altura);
 		int valor[]=new int [3];
 		ImprimirTorres(a);
 		System.out.println();
@@ -10,6 +14,14 @@ public class Main {
 		System.out.println("Posicion inicial: "+valor[0]);
 		System.out.println("Posicion final: "+valor[1]);
 		System.out.println("Posicion altura: "+valor[2]);
+	}
+	public static int[] CrearTorres(int a, int b) {
+		int torres []=new int [a];
+		for (int e=0;e<a;e++) {
+			torres[e]= (int)(Math.random()*b);
+		}
+		
+		return torres;
 	}
 	public static void ImprimirTorres(int a[]) {
 		int max=0;
